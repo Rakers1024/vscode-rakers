@@ -44,7 +44,7 @@
   },
   "scripts": {
     "pub": "vsce publish",
-    "vscode:prepublish": "pnpm run package",
+    "vscode:prepublish": "yarn run package",
     "vsce:package": "vsce package",
     "compile": "webpack",
     "watch": "webpack --watch",
@@ -56,11 +56,9 @@
     "test": "node ./out/test/runTest.js",
     "release": "npx bumpp --tag --commit"
   },
-  "dependencies": {
-    "axios": "^1.6.0",
-    "clipboardy": "^2.3.0"
-  },
   "devDependencies": {
+    "axios": "^1.6.0",
+    "clipboardy": "^2.3.0",
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
     "@types/vscode": "^1.84.0",
