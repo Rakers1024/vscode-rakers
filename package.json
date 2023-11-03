@@ -2,7 +2,7 @@
   "name": "vscode-rakers",
   "displayName": "vscode-rakers",
   "description": "rakers私人定制插件",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.84.0"
   },
