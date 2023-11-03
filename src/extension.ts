@@ -1,10 +1,7 @@
 // 导入vscode扩展API模块并使用别名vscode引用它
 import * as vscode from "vscode";
-import clipboardy from "clipboardy";
-
-//Set error view
-const showError = (message: string) => vscode.window.showErrorMessage(`Copy filename: ${message}`);
-const showWarning = (message: string) => vscode.window.setStatusBarMessage(`${message}`, 3000);
+import copyFileName from "@/copyFileName";
+import downloadFile from "@/downloadFile";
 
 // 当您的扩展程序被激活时，将调用此方法
 // 您的扩展程序在第一次执行命令时被激活
@@ -22,30 +19,11 @@ export function activate(context: vscode.ExtensionContext) {
   // });
   // context.subscriptions.push(disposable);
 
-  //Register command
-  const copyFilename = vscode.commands.registerCommand("vscode-rakers.copyFileName", (uri, files) => {
-    let accumulator = "";
+  // 右键复制文件名
+  copyFileName(context);
 
-    if (typeof files !== "undefined" && files.length > 0) {
-      files.forEach((el: any, index: never) => {
-        //get the relative url, parse it and take the last part
-        let url = vscode.workspace.asRelativePath(el.path);
-        let urlFormatted = url.replace(/\\/g, "/");
-        accumulator += urlFormatted.split("/").pop();
-        accumulator += index == files.length - 1 ? "" : "\n";
-      });
-    } else if (uri) {
-      let url = vscode.workspace.asRelativePath(uri);
-      let urlFormatted = url.replace(/\\/g, "/");
-      accumulator += urlFormatted.split("/").pop();
-    }
-
-    //Copy the last part to clipboard
-    //@ts-ignore
-    clipboardy.write(accumulator).then(showWarning("Filename/s has been copied to clipboard"));
-  });
-
-  context.subscriptions.push(copyFilename);
+  // 右键下载网络图片到本地
+  downloadFile(context);
 }
 
 // 当您的扩展程序被停用时，将调用此方法

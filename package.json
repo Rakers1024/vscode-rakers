@@ -15,22 +15,28 @@
     "commands": [
       {
         "command": "vscode-rakers.copyFileName",
-        "title": "复制文件名"
+        "title": "复制名称"
       },
       {
-        "command": "vscode-rakers.downloadImage",
-        "title": "下载图片"
+        "command": "vscode-rakers.downloadFile",
+        "title": "下载文件到此"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "vscode-rakers.copyFileName"
+        },
+        {
+          "command": "vscode-rakers.downloadFile"
         }
       ],
       "editor/title/context": [
         {
           "command": "vscode-rakers.copyFileName"
+        },
+        {
+          "command": "vscode-rakers.downloadFile"
         }
       ]
     }
@@ -48,21 +54,22 @@
     "test": "node ./out/test/runTest.js"
   },
   "dependencies": {
+    "axios": "^1.6.0",
     "clipboardy": "^2.3.0"
   },
   "devDependencies": {
-    "@types/vscode": "^1.84.0",
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/test-electron": "^2.3.6",
     "eslint": "^8.52.0",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
-    "typescript": "^5.2.2",
     "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "@vscode/test-electron": "^2.3.6"
+    "webpack-cli": "^5.1.4"
   }
 }
