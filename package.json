@@ -14,10 +14,26 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-rakers.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-rakers.copyFileName",
+        "title": "复制文件名"
+      },
+      {
+        "command": "vscode-rakers.downloadImage",
+        "title": "下载图片"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "vscode-rakers.copyFileName"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "vscode-rakers.copyFileName"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
@@ -29,6 +45,9 @@
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "clipboardy": "^2.3.0"
   },
   "devDependencies": {
     "@types/vscode": "^1.84.0",
