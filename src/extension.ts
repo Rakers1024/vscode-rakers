@@ -3,6 +3,7 @@ import * as vscode from "vscode";
 import copyFileName from "@/copyFileName";
 import downloadFile from "@/downloadFile";
 import openNewInstance from "@/openNewInstance";
+import proxyClone from "@/proxyClone";
 
 // 当您的扩展程序被激活时，将调用此方法
 // 您的扩展程序在第一次执行命令时被激活
@@ -28,6 +29,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 打开新的实例
   openNewInstance(context);
+
+  //代理克隆
+  proxyClone(context);
 }
 
 // 当您的扩展程序被停用时，将调用此方法

@@ -35,6 +35,10 @@
       {
         "command": "vscode-rakers.downloadFile",
         "title": "下载文件到此"
+      },
+      {
+        "command": "vscode-rakers.proxyClone",
+        "title": "代理克隆GIt仓库"
       }
     ],
     "menus": {
@@ -59,9 +63,6 @@
       "editor/title/context": [
         {
           "command": "vscode-rakers.copyFileName"
-        },
-        {
-          "command": "vscode-rakers.downloadFile"
         }
       ],
       "commandPalette": [
