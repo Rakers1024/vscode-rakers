@@ -21,6 +21,14 @@
   "contributes": {
     "commands": [
       {
+        "command": "vscode-rakers.openNewInstance",
+        "title": "在此处打开新工作台"
+      },
+      {
+        "command": "vscode-rakers.scopeToHere",
+        "title": "在此处重新打开工作台"
+      },
+      {
         "command": "vscode-rakers.copyFileName",
         "title": "复制名称"
       },
@@ -31,6 +39,15 @@
     ],
     "menus": {
       "explorer/context": [
+        {
+          "command": "vscode-rakers.openNewInstance",
+          "group": "navigation@99"
+        },
+        {
+          "command": "vscode-rakers.scopeToHere",
+          "group": "navigation@98",
+          "when": "explorerResourceIsFolder"
+        },
         {
           "command": "vscode-rakers.copyFileName"
         },
@@ -44,6 +61,16 @@
         },
         {
           "command": "vscode-rakers.downloadFile"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "vscode-rakers.openNewInstance",
+          "when": "never"
+        },
+        {
+          "command": "vscode-rakers.scopeToHere",
+          "when": "never"
         }
       ]
     }

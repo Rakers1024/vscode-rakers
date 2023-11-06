@@ -2,6 +2,7 @@
 import * as vscode from "vscode";
 import copyFileName from "@/copyFileName";
 import downloadFile from "@/downloadFile";
+import openNewInstance from "@/openNewInstance";
 
 // 当您的扩展程序被激活时，将调用此方法
 // 您的扩展程序在第一次执行命令时被激活
@@ -24,6 +25,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 右键下载网络图片到本地
   downloadFile(context);
+
+  // 打开新的实例
+  openNewInstance(context);
 }
 
 // 当您的扩展程序被停用时，将调用此方法
