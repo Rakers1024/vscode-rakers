@@ -2,7 +2,7 @@
   "name": "vscode-rakers",
   "displayName": "vscode-rakers",
   "description": "rakers私人定制插件",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "vscode:prepublish": "yarn run package",
     "vsce:package": "vsce package",
