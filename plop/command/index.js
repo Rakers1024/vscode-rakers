@@ -31,30 +31,30 @@ module.exports = {
 
     const actions = [];
     // 使用json读取并添加commands
-    // actions.push({
-    //   type: "modify",
-    //   path: "package.json",
-    //   transform: (file, _) => {
-    //     const json = JSON.parse(file);
-    //     json.contributes.commands.push({
-    //       title: commandTitle,
-    //       command: `vscode-rakers.${commandType}`,
-    //     });
-    //     return JSON.stringify(json, null, 2);
-    //   },
-    // });
+    actions.push({
+      type: "modify",
+      path: "package.json",
+      transform: (file, _) => {
+        const json = JSON.parse(file);
+        json.contributes.commands.push({
+          title: commandTitle,
+          command: `vscode-rakers.${commandType}`,
+        });
+        return JSON.stringify(json, null, 2);
+      },
+    });
 
-    // // 生成文件
-    // actions.push({
-    //   type: "add",
-    //   path: "src/extensions/{{commandType}}.ts",
-    //   templateFile: "plop/command/extension.ts.hbs",
-    //   data: {
-    //     commandType,
-    //     commandTitle,
-    //     createTime,
-    //   },
-    // });
+    // 生成文件
+    actions.push({
+      type: "add",
+      path: "src/extensions/{{commandType}}.ts",
+      templateFile: "plop/command/extension.ts.hbs",
+      data: {
+        commandType,
+        commandTitle,
+        createTime,
+      },
+    });
 
     //更新入口文件
     actions.push({
