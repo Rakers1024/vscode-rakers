@@ -1,3 +1,9 @@
+/**
+ * @Author: zzc
+ * @Date: 2023/11/09 14:29
+ * @Description: vscode扩展程序入口
+ */
+
 // 导入vscode扩展API模块并使用别名vscode引用它
 import * as vscode from "vscode";
 import copyFileName from "@/extensions/copyFileName";
