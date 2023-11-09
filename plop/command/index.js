@@ -4,12 +4,12 @@ module.exports = {
     {
       type: "input",
       name: "commandTitle",
-      message: "请输入command标题（如：复制名称）:",
+      message: "请输入command标题(如: 复制名称):",
     },
     {
       type: "input",
       name: "commandType",
-      message: "请输入command值（如：copyFileName）:",
+      message: "请输入command值(如: copyFileName):",
     },
   ],
   actions: data => {
@@ -31,29 +31,43 @@ module.exports = {
 
     const actions = [];
     // 使用json读取并添加commands
+    // actions.push({
+    //   type: "modify",
+    //   path: "package.json",
+    //   transform: (file, _) => {
+    //     const json = JSON.parse(file);
+    //     json.contributes.commands.push({
+    //       title: commandTitle,
+    //       command: `vscode-rakers.${commandType}`,
+    //     });
+    //     return JSON.stringify(json, null, 2);
+    //   },
+    // });
+
+    // // 生成文件
+    // actions.push({
+    //   type: "add",
+    //   path: "src/extensions/{{commandType}}.ts",
+    //   templateFile: "plop/command/extension.ts.hbs",
+    //   data: {
+    //     commandType,
+    //     commandTitle,
+    //     createTime,
+    //   },
+    // });
+
+    //更新入口文件
     actions.push({
       type: "modify",
-      path: "package.json",
-      transform: (file, _) => {
-        const json = JSON.parse(file);
-        json.contributes.commands.push({
-          title: commandTitle,
-          command: `vscode-rakers.${commandType}`,
-        });
-        return JSON.stringify(json, null, 2);
-      },
+      path: "src/extension.ts",
+      pattern: /(;)(\n\n)/,
+      template: '$1\nimport {{commandType}} from "@/extensions/{{commandType}}.ts";$2',
     });
-
-    // 生成文件
     actions.push({
-      type: "add",
-      path: "src/extensions/{{commandType}}.ts",
-      templateFile: "plop/command/extension.ts.hbs",
-      data: {
-        commandType,
-        commandTitle,
-        createTime,
-      },
+      type: "modify",
+      path: "src/extension.ts",
+      pattern: /(;)\n(\})/,
+      template: `$1\n\n  //${commandTitle}\n  ${commandType}(context);\n$2`,
     });
 
     return actions;
