@@ -1,9 +1,9 @@
 // 导入vscode扩展API模块并使用别名vscode引用它
 import * as vscode from "vscode";
-import copyFileName from "@/copyFileName";
-import downloadFile from "@/downloadFile";
-import openNewInstance from "@/openNewInstance";
-import proxyClone from "@/proxyClone";
+import copyFileName from "@/extensions/copyFileName";
+import downloadFile from "@/extensions/downloadFile";
+import openNewInstance from "@/extensions/openNewInstance";
+import proxyClone from "@/extensions/proxyClone";
 
 // 当您的扩展程序被激活时，将调用此方法
 // 您的扩展程序在第一次执行命令时被激活

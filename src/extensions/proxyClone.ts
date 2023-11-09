@@ -5,7 +5,7 @@
  */
 
 import * as vscode from "vscode";
-import { showMessage } from "./utils";
+import { showMessage } from "../utils";
 
 export default function proxyClone(context: vscode.ExtensionContext) {
   let cmd = vscode.commands.registerCommand("vscode-rakers.proxyClone", (e: vscode.Uri) => {
