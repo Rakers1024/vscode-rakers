@@ -20,16 +20,40 @@ module.exports = {
       return [];
     }
 
+    //创建时间
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = (date.getMonth() + 1 + "").padStart(2, "0");
+    let day = (date.getDate() + "").padStart(2, "0");
+    let hour = (date.getHours() + "").padStart(2, "0");
+    let minute = (date.getMinutes() + "").padStart(2, "0");
+    let createTime = `${year}-${month}-${day} ${hour}:${minute}`;
+
     const actions = [];
-    //tag
+    // 使用json读取并添加commands
     actions.push({
       type: "modify",
-      path: "../../package.json",
-      pattern: /(("commands": \[[\s\S]*?)\n\s*(\]))(?=\n)/,
-      template: `$2,\n{
-        "title": "${commandTitle}",
-        "command": "vscode-rakers.${commandType}"
-      },\n$3`,
+      path: "package.json",
+      transform: (file, _) => {
+        const json = JSON.parse(file);
+        json.contributes.commands.push({
+          title: commandTitle,
+          command: `vscode-rakers.${commandType}`,
+        });
+        return JSON.stringify(json, null, 2);
+      },
+    });
+
+    // 生成文件
+    actions.push({
+      type: "add",
+      path: "src/extensions/{{commandType}}.ts",
+      templateFile: "plop/command/extension.ts.hbs",
+      data: {
+        commandType,
+        commandTitle,
+        createTime,
+      },
     });
 
     return actions;

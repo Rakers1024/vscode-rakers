@@ -1,0 +1,14 @@
+/**
+ * @Author: zzc
+ * @Date: {{ createTime }}
+ * @Description: {{ commandTitle }}
+ */
+
+import * as vscode from "vscode";
+
+export default function {{commandType}}(context: vscode.ExtensionContext) {
+  let {{commandType}} = vscode.commands.registerCommand("vscode-rakers.{{commandType}}", (url: vscode.Uri) => {
+    //TODO 待实现
+  });
+  context.subscriptions.push({{commandType}});
+}
