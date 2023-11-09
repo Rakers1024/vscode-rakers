@@ -61,7 +61,7 @@ module.exports = {
       type: "modify",
       path: "src/extension.ts",
       pattern: /(;)(\n\n)/,
-      template: '$1\nimport {{commandType}} from "@/extensions/{{commandType}}.ts";$2',
+      template: '$1\nimport {{commandType}} from "@/extensions/{{commandType}}";$2',
     });
     actions.push({
       type: "modify",
