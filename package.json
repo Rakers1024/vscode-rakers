@@ -4,6 +4,7 @@
   "description": "rakers私人定制插件",
   "version": "0.0.5",
   "scripts": {
+    "plop": "plop",
     "vscode:prepublish": "yarn run package",
     "vsce:package": "vsce package",
     "pub": "vsce publish",
@@ -35,24 +36,24 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-rakers.openNewInstance",
-        "title": "在此处打开新工作台"
+        "title": "在此处打开新工作台",
+        "command": "vscode-rakers.openNewInstance"
       },
       {
-        "command": "vscode-rakers.scopeToHere",
-        "title": "在此处重新打开工作台"
+        "title": "在此处重新打开工作台",
+        "command": "vscode-rakers.scopeToHere"
       },
       {
-        "command": "vscode-rakers.copyFileName",
-        "title": "复制名称"
+        "title": "复制名称",
+        "command": "vscode-rakers.copyFileName"
       },
       {
-        "command": "vscode-rakers.downloadFile",
-        "title": "下载文件到此"
+        "title": "下载文件到此",
+        "command": "vscode-rakers.downloadFile"
       },
       {
-        "command": "vscode-rakers.proxyClone",
-        "title": "代理克隆GIt仓库"
+        "title": "代理克隆GIt仓库",
+        "command": "vscode-rakers.proxyClone"
       }
     ],
     "menus": {
@@ -92,17 +93,18 @@
     }
   },
   "devDependencies": {
-    "axios": "^1.6.0",
-    "clipboardy": "^2.3.0",
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
     "@types/vscode": "^1.84.0",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "@vscode/test-electron": "^2.3.6",
+    "axios": "^1.6.0",
+    "clipboardy": "^2.3.0",
     "eslint": "^8.52.0",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
+    "plop": "^4.0.0",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
