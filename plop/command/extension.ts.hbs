@@ -6,6 +6,10 @@
 
 import * as vscode from "vscode";
 
+export interface IPluginSettings {}
+
+const settings = vscode.workspace.getConfiguration().get("vscode-rakers.gitProxy") as IPluginSettings;
+
 export default function {{commandType}}(context: vscode.ExtensionContext) {
   let {{commandType}} = vscode.commands.registerCommand("vscode-rakers.{{commandType}}", (url: vscode.Uri) => {
     //TODO 待实现

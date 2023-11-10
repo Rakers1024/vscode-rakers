@@ -58,6 +58,14 @@
       {
         "title": "创建副本",
         "command": "vscode-rakers.makeFile"
+      },
+      {
+        "title": "使用Git仓库代理",
+        "command": "vscode-rakers.gitProxy"
+      },
+      {
+        "title": "取消Git仓库代理",
+        "command": "vscode-rakers.gitProxyCancel"
       }
     ],
     "menus": {
@@ -90,6 +98,20 @@
           "command": "vscode-rakers.makeFile"
         }
       ],
+      "scm/title": [
+        {
+          "command": "vscode-rakers.gitProxyCancel",
+          "group": "inline",
+          "title": "Edit",
+          "when": "scmProvider == git"
+        },
+        {
+          "command": "vscode-rakers.gitProxy",
+          "group": "inline",
+          "title": "Edit",
+          "when": "scmProvider == git"
+        }
+      ],
       "commandPalette": [
         {
           "command": "vscode-rakers.openNewInstance",
@@ -109,6 +131,11 @@
           "type": "string",
           "default": "http://127.0.0.1:7890",
           "description": "代理克隆代理地址"
+        },
+        "vscode-rakers.gitProxy.proxy": {
+          "type": "string",
+          "default": "http://127.0.0.1:7890",
+          "description": "Git代理地址"
         },
         "vscode-rakers.proxyClone.autoOpen": {
           "type": "boolean",
