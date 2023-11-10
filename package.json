@@ -105,6 +105,16 @@
       "type": "object",
       "title": "Rakers私人定制插件配置项",
       "properties": {
+        "vscode-rakers.proxyClone.proxy": {
+          "type": "string",
+          "default": "http://127.0.0.1:7890",
+          "description": "代理克隆代理地址"
+        },
+        "vscode-rakers.proxyClone.autoOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "自动打开克隆的路径"
+        },
         "vscode-rakers.makeFile.openFileAfterCopy": {
           "type": "boolean",
           "default": true,

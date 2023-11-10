@@ -7,6 +7,13 @@
 import * as vscode from "vscode";
 import { showMessage } from "../utils";
 
+export interface IPluginSettings {
+  proxy: string;
+  autoOpen: boolean;
+}
+
+const settings = vscode.workspace.getConfiguration().get("vscode-rakers.proxyClone") as IPluginSettings;
+
 export default function proxyClone(context: vscode.ExtensionContext) {
   let cmd = vscode.commands.registerCommand("vscode-rakers.proxyClone", (e: vscode.Uri) => {
     // 让输入仓库地址
@@ -16,22 +23,10 @@ export default function proxyClone(context: vscode.ExtensionContext) {
       })
       .then(res => {
         if (res) {
-          // 执行克隆
-          //   vscode.commands.executeCommand("git.clone", res);
-          //使用代理克隆
-          // vscode.commands.executeCommand("git.clone", res, "--config http.proxy=http://127.0.0.1:7890  --config https.proxy=http://127.0.0.1:7890", { proxy: "http://127.0.0.1:7890" });
-          // vscode.commands.executeCommand(
-          //   "git.clone",
-          //   " --config http.proxy=http://127.0.0.1:7890 --config https.proxy=http://127.0.0.1:7890 " + res
-          // );
-
           // 使用代理克隆
-          const proxy = "http://127.0.0.1:7890";
+          const proxy = settings.proxy;
           const config = `--config http.proxy=${proxy} --config https.proxy=${proxy}`;
           const cmd = `git clone ${config} ${res}`;
-          // vscode.commands.executeCommand("workbench.action.terminal.sendSequence", {
-          //   text: cmd + "\u000D"
-          // });
 
           //选择路径
           vscode.window
