@@ -66,6 +66,10 @@
       {
         "title": "取消Git仓库代理",
         "command": "vscode-rakers.gitProxyCancel"
+      },
+      {
+        "title": "切换Vue标签",
+        "command": "vscode-rakers.switchVueTag"
       }
     ],
     "menus": {
@@ -123,6 +127,13 @@
         }
       ]
     },
+    "keybindings": [
+      {
+        "command": "vscode-rakers.switchVueTag",
+        "key": "shift+cmd+v",
+        "when": "editorTextFocus"
+      }
+    ],
     "configuration": {
       "type": "object",
       "title": "Rakers私人定制插件配置项",
