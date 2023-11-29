@@ -78,14 +78,86 @@
       {
         "title": "新建常用文件",
         "command": "vscode-rakers.newFile"
+      },
+      {
+        "title": "index.vue",
+        "command": "vscode-rakers.newFile.index.vue"
+      },
+      {
+        "title": "index.js",
+        "command": "vscode-rakers.newFile.index.js"
+      },
+      {
+        "title": "index.ts",
+        "command": "vscode-rakers.newFile.index.ts"
+      },
+      {
+        "title": "index.jsx",
+        "command": "vscode-rakers.newFile.index.jsx"
+      },
+      {
+        "title": "index.tsx",
+        "command": "vscode-rakers.newFile.index.tsx"
+      },
+      {
+        "title": "index.css",
+        "command": "vscode-rakers.newFile.index.css"
+      },
+      {
+        "title": "index.scss",
+        "command": "vscode-rakers.newFile.index.scss"
+      },
+      {
+        "title": "index.less",
+        "command": "vscode-rakers.newFile.index.less"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "vscode-rakers.newFile",
+        "label": "新建常用文件"
       }
     ],
     "menus": {
+      "vscode-rakers.newFile": [
+        {
+          "command": "vscode-rakers.newFile.index.vue",
+          "group": "navigation@1"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.js",
+          "group": "navigation@2"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.ts",
+          "group": "navigation@3"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.jsx",
+          "group": "navigation@4"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.tsx",
+          "group": "navigation@5"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.css",
+          "group": "navigation@6"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.scss",
+          "group": "navigation@7"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.less",
+          "group": "navigation@8"
+        }
+      ],
       "explorer/context": [
         {
-          "command": "vscode-rakers.newFile",
-          "group": "navigation@6",
-          "when": "explorerResourceIsFolder"
+          "submenu": "vscode-rakers.newFile",
+          "when": "explorerResourceIsFolder",
+          "group": "navigation@6"
         },
         {
           "command": "vscode-rakers.openNewInstance",
