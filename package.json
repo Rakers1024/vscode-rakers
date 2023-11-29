@@ -74,10 +74,19 @@
       {
         "title": "压缩",
         "command": "vscode-rakers.zip"
+      },
+      {
+        "title": "新建常用文件",
+        "command": "vscode-rakers.newFile"
       }
     ],
     "menus": {
       "explorer/context": [
+        {
+          "command": "vscode-rakers.newFile",
+          "group": "navigation@6",
+          "when": "explorerResourceIsFolder"
+        },
         {
           "command": "vscode-rakers.openNewInstance",
           "group": "navigation@99"
