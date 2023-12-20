@@ -30,9 +30,11 @@
     "url": "https://github.com/Rakers1024/vscode-rakers"
   },
   "license": "MIT",
-  "activationEvents": [],
   "main": "./dist/extension.js",
   "icon": "static/logo.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
     "commands": [
       {
@@ -110,6 +112,10 @@
       {
         "title": "index.less",
         "command": "vscode-rakers.newFile.index.less"
+      },
+      {
+        "title": "保存格式化开关",
+        "command": "vscode-rakers.saveFormatSwitch"
       }
     ],
     "submenus": [

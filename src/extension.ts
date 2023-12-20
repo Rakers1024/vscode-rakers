@@ -15,6 +15,7 @@ import gitProxy from "@/extensions/gitProxy";
 import switchVueTag from "@/extensions/switchVueTag";
 import zip from "@/extensions/zip";
 import newFile from "@/extensions/newFile";
+import saveFormatSwitch from "@/extensions/saveFormatSwitch";
 
 // 当您的扩展程序被激活时，将调用此方法
 // 您的扩展程序在第一次执行命令时被激活
@@ -31,6 +32,9 @@ export function activate(context: vscode.ExtensionContext) {
   // vscode.window.showInformationMessage("来自vscode-rakers的问候！");
   // });
   // context.subscriptions.push(disposable);
+
+
+  console.log("恭喜，您的扩展程序“vscode-rakers”现在已激活！");
 
   // 右键复制文件名
   copyFileName(context);
@@ -58,6 +62,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   //新建文件
   newFile(context);
+
+  //保存格式化开关
+  saveFormatSwitch(context);
 }
 
 // 当您的扩展程序被停用时，将调用此方法
