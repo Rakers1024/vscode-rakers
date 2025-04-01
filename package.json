@@ -114,6 +114,18 @@
         "command": "vscode-rakers.newFile.index.less"
       },
       {
+        "title": "page.tsx",
+        "command": "vscode-rakers.newFile.page.tsx"
+      },
+      {
+        "title": "route.tsx",
+        "command": "vscode-rakers.newFile.route.tsx"
+      },
+      {
+        "title": "trpc.ts",
+        "command": "vscode-rakers.newFile.trpc.ts"
+      },
+      {
         "title": "保存格式化开关",
         "command": "vscode-rakers.saveFormatSwitch"
       }
@@ -131,7 +143,7 @@
           "group": "navigation@1"
         },
         {
-          "command": "vscode-rakers.newFile.index.js",
+          "command": "vscode-rakers.newFile.index.tsx",
           "group": "navigation@2"
         },
         {
@@ -139,24 +151,36 @@
           "group": "navigation@3"
         },
         {
-          "command": "vscode-rakers.newFile.index.jsx",
+          "command": "vscode-rakers.newFile.page.tsx",
           "group": "navigation@4"
         },
         {
-          "command": "vscode-rakers.newFile.index.tsx",
+          "command": "vscode-rakers.newFile.route.tsx",
           "group": "navigation@5"
         },
         {
-          "command": "vscode-rakers.newFile.index.css",
+          "command": "vscode-rakers.newFile.trpc.ts",
           "group": "navigation@6"
         },
         {
-          "command": "vscode-rakers.newFile.index.scss",
+          "command": "vscode-rakers.newFile.index.js",
           "group": "navigation@7"
         },
         {
-          "command": "vscode-rakers.newFile.index.less",
+          "command": "vscode-rakers.newFile.index.jsx",
           "group": "navigation@8"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.css",
+          "group": "navigation@9"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.scss",
+          "group": "navigation@10"
+        },
+        {
+          "command": "vscode-rakers.newFile.index.less",
+          "group": "navigation@11"
         }
       ],
       "explorer/context": [
@@ -261,28 +285,28 @@
     }
   },
   "devDependencies": {
-    "@types/archiver": "^6.0.1",
-    "@types/fs-extra": "5.0.1",
-    "@types/lodash.escaperegexp": "^4.1.3",
-    "@types/mocha": "^10.0.3",
-    "@types/node": "18.x",
-    "@types/vscode": "^1.84.0",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@typescript-eslint/parser": "^6.9.0",
-    "@vscode/test-electron": "^2.3.6",
-    "axios": "^1.6.0",
+    "@types/archiver": "^6.0.3",
+    "@types/fs-extra": "5.0.5",
+    "@types/lodash.escaperegexp": "^4.1.9",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "18.19.84",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vscode/test-electron": "^2.4.1",
+    "axios": "^1.8.4",
     "clipboardy": "^2.3.0",
-    "eslint": "^8.52.0",
-    "glob": "^10.3.10",
-    "mocha": "^10.2.0",
-    "plop": "^4.0.0",
-    "ts-loader": "^9.5.0",
-    "typescript": "^5.2.2",
-    "webpack": "^5.89.0",
+    "eslint": "^8.57.1",
+    "glob": "^10.4.5",
+    "mocha": "^10.8.2",
+    "plop": "^4.0.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "archiver": "^6.0.1",
+    "archiver": "^6.0.2",
     "fs-extra": "^5.0.0",
     "lodash.escaperegexp": "^4.1.2"
   }
