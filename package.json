@@ -19,7 +19,7 @@
     "release": "npx bumpp --tag --commit"
   },
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": "^1.98.0"
   },
   "publisher": "Rakers",
   "categories": [
