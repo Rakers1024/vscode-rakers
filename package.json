@@ -2,7 +2,7 @@
   "name": "vscode-rakers",
   "displayName": "vscode-rakers",
   "description": "rakers私人定制插件",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "plop": "plop",
     "vscode:prepublish": "npm run package",
